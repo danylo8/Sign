@@ -8,7 +8,7 @@ public class Sign {
     }
 
     public int numberOfLines() {
-        int lines = message.length();
+        int lines = message.length()/width;
         if (message.length() % width == 0) return lines;
         return lines + 1;
 
@@ -17,7 +17,10 @@ public class Sign {
     public String getLines() {
         String s = "";
         int i = 0;
-        while (i < message.length()) ;
+
+        if (message.length() == 0) return null;
+
+        while (i < message.length())
         {
             s += message.substring(i, i + 1);
             i++;
